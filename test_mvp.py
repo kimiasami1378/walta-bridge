@@ -3,6 +3,7 @@ from bridge_api import MockBridgeClient
 
 
 def test_payment_flow():
+    """Ensure an authenticated transfer flows through Bridge."""
     bridge = MockBridgeClient()
     walta = Walta(bridge_client=bridge)
     alice = Agent('alice', walta)

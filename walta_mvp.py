@@ -13,6 +13,7 @@ class Walta:
     """
 
     def __init__(self, bridge_client: BridgeClient | MockBridgeClient | None = None):
+        """Create a Walta facade using the provided Bridge client."""
         self.bridge = bridge_client or BridgeClient()
         self.registry: Dict[str, Dict[str, str]] = {}
 
@@ -36,6 +37,8 @@ class Walta:
 
 
 class Agent:
+    """Lightweight wrapper for interacting with Walta as an agent."""
+
     def __init__(self, name: str, walta: Walta):
         self.name = name
         self.walta = walta
